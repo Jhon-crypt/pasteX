@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpfastcache/phpfastcache": "^9.1",
+        "spatie/image-optimizer": "^1.6",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
