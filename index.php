@@ -89,8 +89,8 @@ class landingPage{
                     <div class="col-lg-6 mx-auto text-light">
 
                         <p class="lead mb-4">
-                            Copy, paste, and share textual <b>secured</b> stuff which can be accessed 
-                            <br>across several devices.
+                            PasteX is a web based global clipboard that allows you to copy, paste, and share textual <b>secured</b> 
+                            stuff which can be accessed across several devices.
                         </p>
 
                         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
