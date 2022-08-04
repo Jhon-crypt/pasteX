@@ -71,11 +71,8 @@ class landingPage{
                     <!-- font awesome icon css -->
                     <link href="public/assets/font-awesome-library/css/font-awesome.min.css" rel="stylesheet"/>
 
-                    <!-- favicon -->
-                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-                    <link rel="manifest" href="/site.webmanifest">
+                    <!- custom css -->
+                    <link href="./public/assets/css/landing-page/index.css" rel="stylesheet"/>
 
                 </head>
 
@@ -83,7 +80,7 @@ class landingPage{
 
                 <div class="px-4 py-5 my-5 text-center">
 
-                    <img class="rounded-circle" src='.$optimize_to.' alt="" width="124px" height="100px">
+                    <img class="rounded-circle" src='.$optimize_to.' alt="logo" width="124px" height="100px">
 
                     <h1 class="display-5 fw-bold text-light">
                         Hi, Welcome To paste<font color="#00AAF4">X</font>
@@ -92,28 +89,41 @@ class landingPage{
                     <div class="col-lg-6 mx-auto text-light">
 
                         <p class="lead mb-4">
-                            PasteX allows you to copy, paste links, and textual stuff you<br> want to remember or share and access 
-                            across several devices, and also giving you the priviledge to share them with people.
+                            Copy, paste, and share textual <b>secured</b> stuff which can be accessed 
+                            <br>across several devices.
                         </p>
 
                         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+
+                            <div>
+
+                                <button type="button" class="btn btn-md btn-lg px-4 gap-3 text-light" 
+                                style="background-color:#00AAF4;">
+
+                                    <a id="sign_up_link" class="text-light" href="./public/pages/login/login.php">
+                                        Login <i class="fa fa-sign-in"></i>
+                                    </a>
+
+                                </button>
+
+                                <button type="button" class="btn btn-outline-secondary btn-lg px-4 text-light">
+
+                                    <a id="login_link" class="text-light" href="./public/pages/signup/sign-up.php">
+                                        Sign up <i class="fa fa-user-circle-o"></i>
+                                    </a>
+
+                                </button>
 
                             <!-- still in development
 
                             <button type="button" class="btn btn-md btn-lg px-4 gap-3 text-light" 
                             style="background-color:#00AAF4;">
-                                Login <i class="fa fa-sign-in"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-secondary btn-lg px-4 text-light">
-                                Sign up <i class="fa fa-user-circle-o"></i>
+                                Still in development <i class="fa fa-code"></i>
                             </button>
 
                             <!-- still in development -->
 
-                            <button type="button" class="btn btn-md btn-lg px-4 gap-3 text-light" 
-                            style="background-color:#00AAF4;">
-                                Still in development <i class="fa fa-code"></i>
-                            </button>
+                            </div>
 
                         </div>
 
@@ -130,9 +140,6 @@ class landingPage{
                     </div>
 
                 </div>
-
-                <!-- htmx js -->
-                <script src="public/assets/htmx/htmx.min.js"></script>
 
                 </body>
 
