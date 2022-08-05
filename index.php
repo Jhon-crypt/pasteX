@@ -97,6 +97,8 @@ class landingPage{
 
                             <div>
 
+                                <!-- 
+
                                 <button type="button" class="btn btn-md btn-lg px-4 gap-3 text-light" 
                                 style="background-color:#00AAF4;">
 
@@ -114,14 +116,13 @@ class landingPage{
 
                                 </button>
 
-                            <!-- still in development
+                                -->
 
                             <button type="button" class="btn btn-md btn-lg px-4 gap-3 text-light" 
                             style="background-color:#00AAF4;">
                                 Still in development <i class="fa fa-code"></i>
                             </button>
 
-                            <!-- still in development -->
 
                             </div>
 
