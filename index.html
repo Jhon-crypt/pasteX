@@ -1,56 +1,4 @@
-<?php
-
-/**Author : Oladele John
-
-** © 2022 Oladele John
-
-** 7/21/2022
-
-** Web application
-
-** File name : index.php
-
-** About : this serves as the index file and landing page for the pasteX app
-
-*/  
-
-/**PSUEDO ALGORITHM
- * 
- * Dependencies
- * home page class
- * cache home page
- * 
- * *
- */
-
-//Dependencies
-
-require('vendor/autoload.php');
-
-//cache library
-use Phpfastcache\CacheManager;
-use Phpfastcache\Config\ConfigurationOption;
-
-//image optimizer
-use Spatie\ImageOptimizer\OptimizerChainFactory;
-
-
-//home page class
-class landingPage{
-
-    public $landing_page;
-
-    public function displayLandingPage(){
-
-        $image_optimizer = OptimizerChainFactory::create();
-
-        $optimize_to = 'public/images/optimized-images/optimized-logo.png';
-
-        $image_optimizer->optimize('public/images/logo.jpg', $optimize_to);
-
-        $this->landing_page = '
-        
-        <!doctype html>
+<!doctype html>
 
             <html lang="en">
 
@@ -79,7 +27,7 @@ class landingPage{
 
                 <div class="px-4 py-5 my-5 text-center">
 
-                    <img class="rounded-circle" src='.$optimize_to.' alt="logo" width="124px" height="100px">
+                    <img class="rounded-circle" src="public/images/optimized-images/optimized-logo.png" alt="logo" width="124px" height="100px">
 
                     <h1 class="display-5 fw-bold text-light">
                         Hi, Welcome To paste<font color="#00AAF4">X</font>
@@ -145,46 +93,3 @@ class landingPage{
 
             </html>
         
-        ';
-
-    }
-
-    public function cacheLandingPage(){
-
-        CacheManager::setDefaultConfig(new ConfigurationOption([
-            'path' => '', // or in windows "C:/tmp/"
-        ]));
-        
-        $InstanceCache = CacheManager::getInstance('files');
-        
-        $key = "landing_page";
-        $Cached_page = $InstanceCache->getItem($key);
-        
-        if (!$Cached_page->isHit()) {
-            $Cached_page->set($this->landing_page)->expiresAfter(1);//in seconds, also accepts Datetime
-    
-            $InstanceCache->save($Cached_page); // Save the cache item just like you do with doctrine and entities
-        
-            echo $Cached_page->get();
-            //echo 'FIRST LOAD // WROTE OBJECT TO CACHE // RELOAD THE PAGE AND SEE // ';
-         
-        } else { 
-            
-            echo $Cached_page->get();
-            //echo 'READ FROM CACHE // ';
-        
-            $InstanceCache->deleteItem($key);
-        } 
-    
-
-    }
-
-}
-
-$landing_page = new landingPage();
-
-$landing_page->displayLandingPage();
-
-$landing_page->cacheLandingPage();
-
-?>
